@@ -44,7 +44,7 @@ class BasePage:
     def type(self, selector: str, text: str) -> None:
         self.wait_for_element(selector)
         self.highlight_element(selector)
-        self._page.locator(selector).type(text, delay=300)
+        self._page.locator(selector).type(text, delay=500)
 
     def highlight_element(self, selector):
         self._page.evaluate(f"""
