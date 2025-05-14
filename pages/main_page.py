@@ -27,6 +27,7 @@ class MainPage(BasePage):
     _TASK = ".task-row"
     _TASK_TITLE = ".task-title"
     _SEARCH_FIELD = "#search"
+    _TASK_COUNTER = "#total"
 
 
     def __init__(self, page: Page):
@@ -155,6 +156,12 @@ class MainPage(BasePage):
             task_title = tasks.nth(i).locator(self._TASK_TITLE).inner_text()
             task_names.append(task_title)
         return task_names
+
+    def counter_total_tasks(self) -> int:
+        return int(self.get_text(self._TASK_COUNTER))
+
+    def visible_tasks_count(self) -> int:
+        return len(self.visible_tasks())
 
 
 

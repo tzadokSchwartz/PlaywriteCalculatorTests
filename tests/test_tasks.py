@@ -1,6 +1,3 @@
-import random
-import time
-
 import pytest
 from tests.base_test import BaseTest
 from data.test_data import TestData
@@ -24,10 +21,13 @@ class TestTasks(BaseTest):
         assert self.main_page.visible_tasks() == [TestData.task_list_01[1]]
 
     def test_search_task_incorrect_name(self):
-        pass
+        self.main_page.add_multiple_tasks(TestData.task_list_01)
+        self.main_page.search_task(TestData.incorrect_task_name_01)
+        assert not self.main_page.visible_tasks()
 
     def test_task_counter(self):
-        pass
+        self.main_page.add_multiple_tasks(TestData.task_list_01)
+        assert self.main_page.counter_total_tasks() == self.main_page.visible_tasks_count()
 
     def test_mark_task(self):
         pass
