@@ -1,24 +1,26 @@
-# My Tiny Demo Tests
 
-This is a tiny demo project for Playwright testing with Python.
+# Calculator Automation
 
-## Installation
+This project contains automated tests for a web calculator using Selenium/Playwright and Python, following OOP principles and the Page Object Model (POM).
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/tzadokSchwartz/my-tiny-demo-tests.git
-   ```
+## Tasks Implemented
 
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+1. Perform **addition, subtraction, multiplication, and division** on a list of numbers.
+2. Check if a number has an **integer square root**.
+3. Check if a number is a **prime number**.
+4. **Bonus:** Find all **prime factors** of a number using the calculator.
 
-3. Run the tests:
-   ```bash
-   pytest
-   ```
+## Project Structure
 
-## About
+* **pages/** – Page Objects: `BasePage` for generic actions, `CalculatorPage` for calculator-specific actions and operations.
+* **tests/** – Pytest test classes for arithmetic operations, square root, prime check, and prime factors.
+* **data/** – Test data for positive, negative, and fractional numbers.
+* **utils/** – Validation functions to compare calculator results with expected results.
+* **config.ini** – Project configuration (URL, pytest options).
 
-This project was created to practice end-to-end testing using Playwright and Python on the [My Tiny To-Do](https://github.com/mytinytd/demo) application.
+## How to Run
+
+```bash
+pip install -r requirements.txt
+pytest
+```

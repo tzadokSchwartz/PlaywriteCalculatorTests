@@ -1,4 +1,4 @@
-from pages.main_page import MainPage
+from pages.calculator_page import CalculatorPage
 
 class BaseTest:
-    main_page: MainPage
+    calculator_page: CalculatorPage
